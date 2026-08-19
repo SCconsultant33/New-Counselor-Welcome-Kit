@@ -134,9 +134,10 @@ function renderResources() {
 
 function renderLearningLinks() {
   const container = document.querySelector("#learning-links");
-  const learningResources = content.resources.filter((resource) =>
-    ["Interactive calendar", "Living guide"].includes(resource.category),
-  );
+  const learningOrder = ["Interactive calendar", "Living guide"];
+  const learningResources = content.resources
+    .filter((resource) => learningOrder.includes(resource.category))
+    .sort((a, b) => learningOrder.indexOf(a.category) - learningOrder.indexOf(b.category));
   container.textContent = "";
   learningResources.forEach((resource) => {
     const link = configureLink(document.createElement("a"), resource.url);
@@ -144,6 +145,7 @@ function renderLearningLinks() {
     link.append(
       createTextElement("span", "resource-type", resource.category),
       createTextElement("strong", "", resource.title),
+      createTextElement("span", "learning-description", resource.description),
       createTextElement("span", "", `${resource.actionLabel} →`),
     );
     container.appendChild(link);
