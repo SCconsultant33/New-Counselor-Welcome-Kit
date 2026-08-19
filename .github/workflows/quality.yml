@@ -22,6 +22,8 @@ jobs:
           node-version: 22
       - name: Validate editable content
         run: node scripts/validate-content.mjs
+      - name: Validate accessibility safeguards
+        run: node scripts/validate-accessibility.mjs
 
   links:
     runs-on: ubuntu-latest

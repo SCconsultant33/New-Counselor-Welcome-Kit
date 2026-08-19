@@ -11,7 +11,7 @@ Most recurring content lives in [`data/guide-content.js`](data/guide-content.js)
 - update resource titles, descriptions, and links; or
 - change contact information.
 
-Keep the existing quotation marks, braces, and commas. When a pull request is opened, the repository automatically checks the content structure and public links before publication.
+Keep the existing quotation marks, braces, and commas. When a pull request is opened, the repository automatically checks the content structure, accessibility safeguards, and public links before publication.
 
 School-year-specific resources can include the year in their title even though the guide itself remains evergreen.
 
