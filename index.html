@@ -41,18 +41,18 @@
 
     <nav class="section-nav" aria-label="Survival guide sections">
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="section-links">
-        <span>Explore the guide</span><span class="nav-toggle-icon" aria-hidden="true"></span>
+        <span><span class="nav-toggle-label">Current section</span><strong id="current-section">Welcome</strong></span><span class="nav-toggle-icon" aria-hidden="true"></span>
       </button>
-      <div class="section-links" id="section-links">
-        <a href="#welcome">Welcome</a><a href="#getting-connected">Get connected</a><a href="#about-sean">About Sean</a><a href="#consultant-services">Services</a><a href="#stay-connected">Stay connected</a><a href="#professional-learning">Learning</a><a href="#resource-toolkit">Resources</a><a href="#request-support">Request support</a>
+      <div class="section-links" id="section-links" role="tablist" aria-label="Guide sections">
+        <a href="#welcome" id="tab-welcome" role="tab" aria-controls="welcome">Welcome</a><a href="#getting-connected" id="tab-getting-connected" role="tab" aria-controls="getting-connected">Get connected</a><a href="#about-sean" id="tab-about-sean" role="tab" aria-controls="about-sean">About Sean</a><a href="#consultant-services" id="tab-consultant-services" role="tab" aria-controls="consultant-services">Services</a><a href="#stay-connected" id="tab-stay-connected" role="tab" aria-controls="stay-connected">Stay connected</a><a href="#professional-learning" id="tab-professional-learning" role="tab" aria-controls="professional-learning">Learning</a><a href="#resource-toolkit" id="tab-resource-toolkit" role="tab" aria-controls="resource-toolkit">Resources</a><a href="#request-support" id="tab-request-support" role="tab" aria-controls="request-support">Request support</a>
       </div>
     </nav>
 
     <main id="main-content">
-      <section class="guide-section welcome-section" id="welcome" aria-labelledby="welcome-title">
+      <section class="guide-section welcome-section" id="welcome" role="tabpanel" aria-labelledby="tab-welcome welcome-title">
         <div class="section-marker" aria-hidden="true"><span>01</span></div>
         <div class="section-content split-layout welcome-layout">
-          <div><p class="eyebrow">Welcome to Oakland County</p><h2 id="welcome-title">You have a countywide counseling community behind you.</h2></div>
+          <div><h2 id="welcome-title">Welcome</h2><p class="section-tagline">You have a countywide counseling community behind you.</p></div>
           <div class="prose-large">
             <p>Whether you are brand new to school counseling or starting in a new district, I hope you come to feel at home here in Oakland County.</p>
             <p>Oakland Schools serves all 28 traditional school districts and many public school academies in the county. Across that community, approximately 320 school counselors are doing thoughtful work for students and families. This guide is designed to help you find the people, communication channels, learning, and resources available to you.</p>
@@ -62,11 +62,11 @@
         </div>
       </section>
 
-      <section class="guide-section checklist-section" id="getting-connected" aria-labelledby="checklist-title">
+      <section class="guide-section checklist-section" id="getting-connected" role="tabpanel" aria-labelledby="tab-getting-connected checklist-title" hidden>
         <div class="section-marker" aria-hidden="true"><span>02</span></div>
         <div class="section-content">
           <div class="section-heading">
-            <div><p class="eyebrow">Getting connected</p><h2 id="checklist-title">Your first trail markers</h2><p>There is no required timeline. Use these flexible steps to build your local support network and keep the most useful resources close at hand.</p></div>
+            <div><h2 id="checklist-title">Getting Connected</h2><p class="section-tagline">Your first trail markers</p><p>There is no required timeline. Use these flexible steps to build your local support network and keep the most useful resources close at hand.</p></div>
             <div class="progress-summary" aria-labelledby="progress-label">
               <div class="progress-copy"><span id="progress-label">Connection progress</span><strong id="progress-text">0 of 6 completed — 0%</strong></div>
               <div class="progress-track" id="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-labelledby="progress-label progress-text"><span class="progress-fill" id="progress-fill"></span></div>
@@ -78,12 +78,12 @@
         </div>
       </section>
 
-      <section class="guide-section" id="about-sean" aria-labelledby="about-title">
+      <section class="guide-section" id="about-sean" role="tabpanel" aria-labelledby="tab-about-sean about-title" hidden>
         <div class="section-marker" aria-hidden="true"><span>03</span></div>
         <div class="section-content about-layout">
           <div class="portrait-wrap"><img src="assets/sean-headshot-2026.png" alt="Sean Dougherty, Oakland Schools School Counseling Consultant" width="1254" height="1254" /></div>
           <div class="about-copy">
-            <p class="eyebrow">About your county guide</p><h2 id="about-title">Meet Sean Dougherty</h2><p class="role-line">School Counseling Consultant · Oakland Schools</p>
+            <h2 id="about-title">About Sean</h2><p class="section-tagline">Meet your county guide</p><p class="role-line">Sean Dougherty · School Counseling Consultant · Oakland Schools</p>
             <p>Sean has served as the School Counseling Consultant at Oakland Schools since 2019. Before that, he spent 11 years as a school counselor at Lakeland High School, where he served as department chair and district cohort leader for counselors in Huron Valley Schools.</p>
             <p>He earned a bachelor's degree in Psychology from the University of Michigan and a master's degree in Counseling with a School Counselor specialization from Oakland University. He is a Licensed Professional Counselor, National Certified Counselor, and licensed school counselor.</p>
             <p>Sean also taught a graduate-level school counseling course at Eastern Michigan University and serves on the Oakland Counseling Association board.</p>
@@ -91,10 +91,10 @@
         </div>
       </section>
 
-      <section class="guide-section tinted-section" id="consultant-services" aria-labelledby="services-title">
+      <section class="guide-section tinted-section" id="consultant-services" role="tabpanel" aria-labelledby="tab-consultant-services services-title" hidden>
         <div class="section-marker" aria-hidden="true"><span>04</span></div>
         <div class="section-content">
-          <div class="section-heading narrow-heading"><div><p class="eyebrow">School Counseling Consultant Services</p><h2 id="services-title">Support for the work in front of you</h2><p>Consultation, coaching, resource development, and learning can be shaped around the needs of individual counselors, teams, and districts.</p></div></div>
+          <div class="section-heading narrow-heading"><div><h2 id="services-title">School Counseling Consultant Services</h2><p class="section-tagline">Support for the work in front of you</p><p>Consultation, coaching, resource development, and learning can be shaped around the needs of individual counselors, teams, and districts.</p></div></div>
           <div class="service-grid" id="service-grid"></div>
           <article class="coaching-callout">
             <div><p class="card-label">Coaching support</p><h3>Purposeful conversations for reflection and problem-solving</h3></div>
@@ -103,10 +103,10 @@
         </div>
       </section>
 
-      <section class="guide-section" id="stay-connected" aria-labelledby="connected-title">
+      <section class="guide-section" id="stay-connected" role="tabpanel" aria-labelledby="tab-stay-connected connected-title" hidden>
         <div class="section-marker" aria-hidden="true"><span>05</span></div>
         <div class="section-content">
-          <div class="section-heading narrow-heading"><div><p class="eyebrow">Stay connected</p><h2 id="connected-title">Keep the county signal within reach</h2><p>The listserv and weekly update are the primary communication channels for timely school counseling information in Oakland County.</p></div></div>
+          <div class="section-heading narrow-heading"><div><h2 id="connected-title">Stay Connected</h2><p class="section-tagline">Keep the county signal within reach</p><p>The listserv and weekly update are the primary communication channels for timely school counseling information in Oakland County.</p></div></div>
           <div class="feature-grid">
             <article class="feature-card">
               <p class="card-number" aria-hidden="true">01</p><p class="card-label">Counselors listserv</p><h3>Join the countywide conversation</h3><p>Receive resources, professional learning announcements, and timely updates. Join using the public form or email Sean with your full name, email, school, and district.</p>
@@ -122,10 +122,10 @@
         </div>
       </section>
 
-      <section class="guide-section learning-section" id="professional-learning" aria-labelledby="learning-title">
+      <section class="guide-section learning-section" id="professional-learning" role="tabpanel" aria-labelledby="tab-professional-learning learning-title" hidden>
         <div class="section-marker" aria-hidden="true"><span>06</span></div>
         <div class="section-content split-layout">
-          <div><p class="eyebrow">Professional learning</p><h2 id="learning-title">Find your next place to learn and connect</h2><p>Oakland Schools offers live, online, in-person, and self-paced learning designed for school counselors. Start with the interactive calendar, then use the annual guide for complete program and SCECH details.</p></div>
+          <div><h2 id="learning-title">Professional Learning</h2><p class="section-tagline">Find your next place to learn and connect</p><p>Oakland Schools offers live, online, in-person, and self-paced learning designed for school counselors. Start with the interactive calendar, then use the annual guide for complete program and SCECH details.</p></div>
           <div class="learning-links" id="learning-links">
             <a class="learning-card" href="https://bit.ly/OSCounselorCalendar2627" target="_blank" rel="noopener noreferrer"><span class="resource-type">Interactive calendar</span><strong>2026–2027 School Counselor Professional Learning Calendar</strong><span>Browse events and registration details <span aria-hidden="true">→</span></span></a>
             <a class="learning-card" href="https://docs.google.com/document/d/1r6xo4kThtCowQVXMwDltHBHlv7Aa1fDjLmxzQHUj-DQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><span class="resource-type">Living guide</span><strong>2026–2027 School Counselor Professional Learning Guide</strong><span>Review programs and SCECH information <span aria-hidden="true">→</span></span></a>
@@ -133,18 +133,18 @@
         </div>
       </section>
 
-      <section class="guide-section" id="resource-toolkit" aria-labelledby="resources-title">
+      <section class="guide-section" id="resource-toolkit" role="tabpanel" aria-labelledby="tab-resource-toolkit resources-title" hidden>
         <div class="section-marker" aria-hidden="true"><span>07</span></div>
         <div class="section-content">
-          <div class="section-heading narrow-heading"><div><p class="eyebrow">Resource toolkit</p><h2 id="resources-title">Reliable gear for the path ahead</h2><p>These recurring references help you find colleagues, learning, communication guidance, and previous updates without searching across multiple systems.</p></div></div>
+          <div class="section-heading narrow-heading"><div><h2 id="resources-title">Resource Toolkit</h2><p class="section-tagline">Reliable gear for the path ahead</p><p>These recurring references help you find colleagues, learning, communication guidance, and previous updates without searching across multiple systems.</p></div></div>
           <div class="resource-list" id="resource-list"></div>
         </div>
       </section>
 
-      <section class="guide-section support-section" id="request-support" aria-labelledby="support-title">
+      <section class="guide-section support-section" id="request-support" role="tabpanel" aria-labelledby="tab-request-support support-title" hidden>
         <div class="section-marker" aria-hidden="true"><span>08</span></div>
         <div class="section-content">
-          <div class="support-intro"><p class="eyebrow">Request support</p><h2 id="support-title">You do not have to navigate alone.</h2><p>Reach out with a question, schedule time to talk, or request coaching support. Choose the method that works best for you.</p></div>
+          <div class="support-intro"><h2 id="support-title">Request Support</h2><p class="section-tagline">You do not have to navigate alone.</p><p>Reach out with a question, schedule time to talk, or request coaching support. Choose the method that works best for you.</p></div>
           <div class="contact-grid">
             <a class="contact-card" href="tel:+12482388293"><span class="contact-icon" aria-hidden="true">01</span><span class="contact-label">Call or text</span><strong>248.238.8293</strong><span>Connect directly by cell</span></a>
             <a class="contact-card" href="mailto:sean.dougherty@oakland.k12.mi.us"><span class="contact-icon" aria-hidden="true">02</span><span class="contact-label">Email</span><strong>sean.dougherty@oakland.k12.mi.us</strong><span>Send a question or introduction</span></a>

@@ -177,9 +177,35 @@ function renderContactLinks() {
 
 function setupNavigation() {
   const toggle = document.querySelector(".nav-toggle");
+  const currentSection = document.querySelector("#current-section");
   const linksPanel = document.querySelector("#section-links");
   const links = [...linksPanel.querySelectorAll("a")];
   const sections = links.map((link) => document.querySelector(link.hash)).filter(Boolean);
+
+  function selectSection(sectionId, { updateHistory = true, scroll = true } = {}) {
+    const target = document.querySelector(`#${sectionId}`);
+    const activeLink = links.find((link) => link.hash === `#${sectionId}`);
+    if (!target || !activeLink) return;
+
+    sections.forEach((section) => {
+      section.hidden = section !== target;
+    });
+    links.forEach((link) => {
+      const selected = link === activeLink;
+      link.setAttribute("aria-selected", String(selected));
+      link.tabIndex = selected ? 0 : -1;
+    });
+    currentSection.textContent = activeLink.textContent.trim();
+    toggle.setAttribute("aria-expanded", "false");
+    linksPanel.classList.remove("is-open");
+
+    if (updateHistory && window.location.hash !== activeLink.hash) {
+      window.history.pushState(null, "", activeLink.hash);
+    }
+    if (scroll) {
+      document.querySelector(".section-nav").scrollIntoView({ block: "start" });
+    }
+  }
 
   toggle.addEventListener("click", () => {
     const open = toggle.getAttribute("aria-expanded") === "true";
@@ -188,27 +214,41 @@ function setupNavigation() {
   });
 
   links.forEach((link) => {
-    link.addEventListener("click", () => {
-      toggle.setAttribute("aria-expanded", "false");
-      linksPanel.classList.remove("is-open");
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      selectSection(link.hash.slice(1));
+      if (window.matchMedia("(max-width: 47.5rem)").matches) toggle.focus();
+    });
+    link.addEventListener("keydown", (event) => {
+      const currentIndex = links.indexOf(link);
+      let nextIndex;
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (currentIndex + 1) % links.length;
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (currentIndex - 1 + links.length) % links.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = links.length - 1;
+      if (nextIndex === undefined) return;
+      event.preventDefault();
+      links[nextIndex].focus();
+      selectSection(links[nextIndex].hash.slice(1));
     });
   });
 
-  if ("IntersectionObserver" in window) {
-    const navObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          links.forEach((link) => {
-            if (link.hash === `#${entry.target.id}`) link.setAttribute("aria-current", "location");
-            else link.removeAttribute("aria-current");
-          });
-        });
-      },
-      { rootMargin: "-30% 0px -60% 0px", threshold: 0 },
-    );
-    sections.forEach((section) => navObserver.observe(section));
-  }
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link || links.includes(link)) return;
+    const sectionId = link.hash.slice(1);
+    if (!sections.some((section) => section.id === sectionId)) return;
+    event.preventDefault();
+    selectSection(sectionId);
+  });
+
+  window.addEventListener("popstate", () => {
+    const sectionId = window.location.hash.slice(1);
+    selectSection(sections.some((section) => section.id === sectionId) ? sectionId : "welcome", { updateHistory: false });
+  });
+
+  const initialSection = window.location.hash.slice(1);
+  selectSection(sections.some((section) => section.id === initialSection) ? initialSection : "welcome", { updateHistory: false, scroll: false });
 }
 
 if (content) {
