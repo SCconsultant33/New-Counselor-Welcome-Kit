@@ -69,8 +69,8 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .site-header { width: var(--content); margin: 0 auto; padding-top: 1rem; }
 .brand-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.25rem; }
-.brand-name { display: inline-flex; align-items: center; text-decoration: none; }
-.brand-logo { width: clamp(10.5rem, 22vw, 13.5rem); height: auto; }
+.brand-name { display: inline-flex; flex: 0 0 auto; align-items: center; max-width: 65vw; text-decoration: none; }
+.brand-logo { width: clamp(10.5rem, 22vw, 13.5rem); height: auto; max-height: 2.625rem; object-fit: contain; aspect-ratio: 1206 / 232; }
 .guide-type { color: var(--muted); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
 
 .hero {
