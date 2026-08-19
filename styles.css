@@ -122,20 +122,18 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .guide-section { position: relative; width: var(--content); min-height: 34rem; margin: 0 auto; padding: clamp(4rem, 8vw, 6.5rem) 0; border-bottom: 1px solid var(--line); scroll-margin-top: 5rem; }
 .guide-section[hidden] { display: none; }
-.section-marker { position: absolute; top: clamp(2.2rem, 5vw, 4rem); right: 0; color: var(--os-blue); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; }
-.section-marker::before { content: ""; display: inline-block; width: 2.8rem; margin-right: 0.5rem; border-top: 2px solid var(--os-green); vertical-align: middle; }
 .section-content { width: 100%; }
 .split-layout { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(2rem, 7vw, 7rem); align-items: start; }
 .prose-large { font-size: clamp(1.05rem, 1.7vw, 1.25rem); }
 .prose-large p:first-child { margin-top: 0; }
-.signature { color: var(--os-blue); font-size: 1.2rem; font-weight: 700; }
+.signature { display: inline-grid; margin-top: 1.1rem; padding: 0.8rem 1rem; color: #fff; background: var(--os-blue); border-left: 0.35rem solid var(--os-green); border-radius: 0.35rem; font-size: 1.18rem; font-weight: 700; line-height: 1.25; box-shadow: 0.35rem 0.35rem 0 var(--sand); }
+.signature span { color: #dff3e8; font-size: 0.92rem; font-weight: 400; }
 .section-tagline { max-width: 34rem; margin: 0 0 1rem; color: var(--green-dark); font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 700; line-height: 1.3; }
 .section-heading { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(17rem, 0.8fr); gap: clamp(2rem, 7vw, 6rem); align-items: end; margin-bottom: 2rem; }
 .section-heading p:not(.eyebrow), .split-layout > div > p:not(.eyebrow), .support-intro > p:not(.eyebrow) { max-width: 45rem; color: var(--muted); }
 .narrow-heading { grid-template-columns: minmax(0, 52rem); }
 
 .checklist-section { width: 100%; max-width: none; padding-inline: max(1rem, calc((100% - 74rem) / 2)); color: #fff; background: var(--os-blue-dark); border: 0; }
-.checklist-section .section-marker { right: max(1rem, calc((100% - 74rem) / 2)); color: #fff; }
 .checklist-section h2 { color: #fff; }
 .checklist-section .eyebrow { color: #bff0d3; }
 .checklist-section .section-heading p { color: #e8eaff; }
@@ -153,20 +151,19 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .check-item a { display: inline-block; margin-top: 0.55rem; font-weight: 700; }
 .check-item.is-complete { background: #e7f5ed; }
 .check-item.is-complete .check-label { text-decoration: line-through; text-decoration-thickness: 0.1em; }
-.checklist-footer { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; color: #e8eaff; font-size: 0.9rem; }
+.checklist-footer { display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1rem; color: #e8eaff; font-size: 0.9rem; }
 .checklist-footer p { margin: 0; }
 .text-button { padding: 0; color: #fff; border: 0; background: transparent; font-weight: 700; text-decoration: underline; text-underline-offset: 0.2em; cursor: pointer; }
 .sr-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
-.about-layout { display: grid; grid-template-columns: minmax(14rem, 0.55fr) minmax(0, 1.45fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
-.portrait-wrap { position: relative; width: 100%; max-width: 21rem; justify-self: center; }
+.about-layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.portrait-wrap { position: relative; width: 15rem; height: 15rem; justify-self: start; }
 .portrait-wrap::before { content: ""; position: absolute; inset: -0.75rem 1.5rem 0.75rem -0.75rem; z-index: -1; background: var(--os-green); border-radius: 47% 53% 48% 52%; transform: rotate(-2deg); }
-.portrait-wrap img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 47% 53% 48% 52%; }
+.portrait-wrap img { width: 15rem; height: 15rem; object-fit: cover; border-radius: 47% 53% 48% 52%; }
 .about-copy p:not(.eyebrow):not(.role-line) { color: var(--muted); }
 .role-line { color: var(--green-dark); font-size: 1.1rem; font-weight: 700; }
 
 .tinted-section { width: 100%; max-width: none; padding-inline: max(1rem, calc((100% - 74rem) / 2)); background: var(--wash); border: 0; }
-.tinted-section .section-marker { right: max(1rem, calc((100% - 74rem) / 2)); }
 .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; counter-reset: services; }
 .service-card { position: relative; min-height: 12rem; padding: 1.2rem; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: 0.55rem; }
 .service-card::after { counter-increment: services; content: "0" counter(services); position: absolute; right: 0.8rem; bottom: -0.5rem; color: rgba(42, 50, 139, 0.08); font-size: 5rem; font-weight: 700; line-height: 1; }
@@ -191,7 +188,6 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .text-link { display: inline-block; margin-top: 1rem; font-weight: 700; }
 
 .learning-section { color: #fff; background: var(--os-blue); width: 100%; max-width: none; padding-inline: max(1rem, calc((100% - 74rem) / 2)); border: 0; }
-.learning-section .section-marker { right: max(1rem, calc((100% - 74rem) / 2)); color: #fff; }
 .learning-section h2 { color: #fff; }
 .learning-section .eyebrow { color: #bff0d3; }
 .learning-section .section-tagline, .support-section .section-tagline, .checklist-section .section-tagline { color: #bff0d3; }
@@ -201,16 +197,16 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .learning-card:hover { color: var(--ink); background: #eaf5ef; transform: translateY(-2px); }
 .learning-card .resource-type { color: var(--green-dark); }
 .learning-card strong { color: var(--os-blue); font-size: 1.1rem; }
+.learning-card .learning-description { color: var(--muted); line-height: 1.5; }
 .learning-card > span:last-child { color: var(--green-dark); font-weight: 700; }
 
-.resource-list { border-top: 1px solid var(--line); }
-.resource-card { display: grid; grid-template-columns: minmax(10rem, 0.35fr) minmax(0, 1.2fr) auto; gap: clamp(1rem, 4vw, 3rem); align-items: center; padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+.resource-list { display: grid; gap: 0.9rem; }
+.resource-card { display: grid; grid-template-columns: 12rem minmax(0, 1fr) auto; gap: clamp(1rem, 3vw, 2.25rem); align-items: center; padding: 1.25rem; background: #fff; border: 1px solid var(--line); border-left: 0.35rem solid var(--os-green); border-radius: 0.6rem; box-shadow: 0 0.6rem 1.4rem rgba(23, 32, 61, 0.08); }
 .resource-card h3 { margin-bottom: 0.5rem; color: var(--os-blue); }
 .resource-card p { margin: 0; color: var(--muted); }
 .resource-card .resource-type { margin: 0; }
 
 .support-section { width: 100%; max-width: none; padding-inline: max(1rem, calc((100% - 74rem) / 2)); color: #fff; background: linear-gradient(125deg, var(--os-blue-dark), #153d79 65%, var(--green-dark)); border: 0; }
-.support-section .section-marker { right: max(1rem, calc((100% - 74rem) / 2)); color: #fff; }
 .support-section h2 { color: #fff; }
 .support-intro { max-width: 48rem; }
 .support-intro > p:not(.eyebrow) { color: #edf0ff; }
@@ -234,9 +230,10 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   .trail-card { max-width: 25rem; transform: none; }
   .section-links { flex-wrap: wrap; }
   .split-layout, .about-layout, .coaching-callout { grid-template-columns: 1fr; }
-  .portrait-wrap { max-width: 19rem; }
+  .portrait-wrap { width: 14rem; height: 14rem; justify-self: center; }
+  .portrait-wrap img { width: 14rem; height: 14rem; }
   .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .resource-card { grid-template-columns: minmax(9rem, 0.35fr) minmax(0, 1fr); }
+  .resource-card { grid-template-columns: 11rem minmax(0, 1fr); }
   .resource-card .button { grid-column: 2; justify-self: start; }
 }
 
@@ -254,7 +251,6 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
   .section-links.is-open { display: grid; }
   .section-links a { padding: 0.7rem; }
   .guide-section { min-height: 0; padding-top: 5.2rem; }
-  .section-marker { top: 2rem; }
   h2 { font-size: clamp(2.55rem, 13vw, 4rem); }
   .section-heading { grid-template-columns: 1fr; gap: 1rem; }
   .progress-copy { align-items: flex-start; flex-direction: column; gap: 0.1rem; }
