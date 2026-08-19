@@ -62,7 +62,7 @@ window.GUIDE_CONTENT = {
 
   resources: [
     {
-      category: "Living guide",
+      category: "Learning guide",
       title: "2026-2027 School Counselor Professional Learning Guide",
       description: "Details Oakland Schools professional learning organized specifically for school counselors serving Oakland County.",
       actionLabel: "Open the PL guide",
@@ -97,8 +97,8 @@ window.GUIDE_CONTENT = {
       url: "https://docs.google.com/document/d/1lK9S3UnD8X0FlRtIZC-RFd6kqWHBJLi1d9Cpytyezio/edit?usp=sharing",
     },
     {
-      category: "Coaching overview",
-      title: "2026-2027 School Counselor Coaching Flyer",
+      category: "Coaching",
+      title: "School Counselor Coaching",
       description: "Review coaching options for new school counselors and counselor leaders, including purpose, format, and ways to connect.",
       actionLabel: "View the coaching flyer",
       url: "https://drive.google.com/file/d/1kOgmgWsZMnEdqE7hPTA3JS6zz3QPRxM2/view?usp=drivesdk",

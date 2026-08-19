@@ -134,7 +134,7 @@ function renderResources() {
 
 function renderLearningLinks() {
   const container = document.querySelector("#learning-links");
-  const learningOrder = ["Interactive calendar", "Living guide"];
+  const learningOrder = ["Interactive calendar", "Learning guide"];
   const learningResources = content.resources
     .filter((resource) => learningOrder.includes(resource.category))
     .sort((a, b) => learningOrder.indexOf(a.category) - learningOrder.indexOf(b.category));
@@ -178,13 +178,14 @@ function renderContactLinks() {
 }
 
 function setupNavigation() {
+  const navigation = document.querySelector(".section-nav");
   const toggle = document.querySelector(".nav-toggle");
   const currentSection = document.querySelector("#current-section");
   const linksPanel = document.querySelector("#section-links");
   const links = [...linksPanel.querySelectorAll("a")];
   const sections = links.map((link) => document.querySelector(link.hash)).filter(Boolean);
 
-  function selectSection(sectionId, { updateHistory = true, scroll = true } = {}) {
+  function selectSection(sectionId, { updateHistory = true, scroll = true, focusTab = false } = {}) {
     const target = document.querySelector(`#${sectionId}`);
     const activeLink = links.find((link) => link.hash === `#${sectionId}`);
     if (!target || !activeLink) return;
@@ -205,7 +206,10 @@ function setupNavigation() {
       window.history.pushState(null, "", activeLink.hash);
     }
     if (scroll) {
-      document.querySelector(".section-nav").scrollIntoView({ block: "start" });
+      window.scrollTo({ top: navigation.offsetTop, left: 0, behavior: "auto" });
+    }
+    if (focusTab) {
+      activeLink.focus({ preventScroll: true });
     }
   }
 
@@ -241,7 +245,7 @@ function setupNavigation() {
     const sectionId = link.hash.slice(1);
     if (!sections.some((section) => section.id === sectionId)) return;
     event.preventDefault();
-    selectSection(sectionId);
+    selectSection(sectionId, { focusTab: true });
   });
 
   window.addEventListener("popstate", () => {
