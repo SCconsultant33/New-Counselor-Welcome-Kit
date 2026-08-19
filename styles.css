@@ -69,8 +69,8 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 .site-header { width: var(--content); margin: 0 auto; padding-top: 1rem; }
 .brand-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.25rem; }
-.brand-name { display: inline-flex; align-items: center; gap: 0.65rem; color: var(--os-blue); font-size: clamp(1.1rem, 2vw, 1.45rem); font-weight: 700; text-decoration: none; }
-.brand-dot { width: 1.25rem; height: 1.25rem; background: var(--os-green); border-radius: 70% 35% 70% 35%; transform: rotate(-18deg); }
+.brand-name { display: inline-flex; align-items: center; text-decoration: none; }
+.brand-logo { width: clamp(10.5rem, 22vw, 13.5rem); height: auto; }
 .guide-type { color: var(--muted); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
 
 .hero {
@@ -222,10 +222,9 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 .contact-card-accent { background: #dff3e8; }
 .contact-card-accent .contact-icon { background: var(--green-dark); }
 
-.site-footer { display: flex; justify-content: space-between; gap: 2rem; width: var(--content); margin: 0 auto; padding: 2rem 0; color: var(--muted); font-size: 0.88rem; }
-.site-footer div { display: grid; }
-.site-footer strong { color: var(--os-blue); }
-.site-footer a { font-weight: 700; }
+.site-footer { width: var(--content); margin: 0 auto; padding: 1.25rem 0 1.5rem; color: var(--muted); border-top: 1px solid var(--line); font-size: clamp(0.7rem, 1vw, 0.78rem); line-height: 1.45; }
+.site-footer p { margin: 0; }
+.site-footer a { color: var(--green-dark); font-weight: 700; overflow-wrap: anywhere; }
 
 @media (max-width: 58rem) {
   .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -241,7 +240,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
 @media (max-width: 47.5rem) {
   html { scroll-padding-top: 5.5rem; }
-  .brand-bar, .site-footer { align-items: flex-start; flex-direction: column; }
+  .brand-bar { align-items: flex-start; flex-direction: column; }
   .guide-type { font-size: 0.78rem; }
   .hero { padding: 1.5rem; }
   .hero h1 { font-size: clamp(2.8rem, 15vw, 4.8rem); }
@@ -269,7 +268,7 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }
 
 @media print {
-  body::before, .section-nav, .hero-actions, .checklist-footer, .site-footer { display: none; }
+  body::before, .section-nav, .hero-actions, .checklist-footer { display: none; }
   .site-header, .guide-section { width: 100%; }
   .hero, .checklist-section, .learning-section, .support-section { color: #000; background: #fff; box-shadow: none; }
   .hero h1, .checklist-section h2, .learning-section h2, .support-section h2 { color: #000; }
