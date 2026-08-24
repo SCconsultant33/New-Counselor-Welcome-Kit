@@ -62,6 +62,13 @@ window.GUIDE_CONTENT = {
 
   resources: [
     {
+      category: "Virtual series",
+      title: "2026-2027 New Counselor Academy",
+      description: "A virtual series for new(ish) K-12 school counselors across Michigan to build connections, share practice, and strengthen foundational counseling skills.",
+      actionLabel: "View the series flyer",
+      url: "https://docs.google.com/document/d/19lSpsfAeTeys9og5pb47hOM8TBJP0Dqim-AnkDk4KTQ/edit?usp=sharing",
+    },
+    {
       category: "Learning guide",
       title: "2026-2027 School Counselor Professional Learning Guide",
       description: "Details Oakland Schools professional learning organized specifically for school counselors serving Oakland County.",

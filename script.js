@@ -134,7 +134,7 @@ function renderResources() {
 
 function renderLearningLinks() {
   const container = document.querySelector("#learning-links");
-  const learningOrder = ["Interactive calendar", "Learning guide"];
+  const learningOrder = ["Virtual series", "Interactive calendar", "Learning guide"];
   const learningResources = content.resources
     .filter((resource) => learningOrder.includes(resource.category))
     .sort((a, b) => learningOrder.indexOf(a.category) - learningOrder.indexOf(b.category));
