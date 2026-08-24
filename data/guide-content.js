@@ -64,8 +64,8 @@ window.GUIDE_CONTENT = {
     {
       category: "Virtual series",
       title: "2026-2027 New Counselor Academy",
-      description: "Presented by Oakland Schools and Wayne RESA, the New Counselor Academy is open to new(ish) K-12 school counselors throughout Michigan. Each virtual session combines focused foundational learning, guest and practitioner perspectives, practice sharing, peer consultation, and collaborative problem-solving to help counselors build connections and strengthen their practice.",
-      actionLabel: "View the Academy flyer",
+      description: "A virtual series for new(ish) K-12 school counselors across Michigan to build connections, share practice, and strengthen foundational counseling skills.",
+      actionLabel: "View the series flyer",
       url: "https://docs.google.com/document/d/19lSpsfAeTeys9og5pb47hOM8TBJP0Dqim-AnkDk4KTQ/edit?usp=sharing",
     },
     {
